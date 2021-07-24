@@ -22,7 +22,7 @@ from scipy.signal.windows import kaiser, hamming, hann, blackman
 
 # A procedure for automated reading of audio files even if they're
 # encoded with FFMPEG-managable compressed audio formats (REQUIRES
-# FFMPEG software installed and callable from the cmd/PowerShell,
+# FFmpeg software installed and callable from the cmd/PowerShell,
 # check if this is true BEFORE STARTING TO RELY on this feature).
 def read_file(tmp_dir, fpath):
 
@@ -43,7 +43,22 @@ def read_file(tmp_dir, fpath):
         
         cmd = f'ffmpeg -i "{infile_path}" "{outfile_path}"'
         print(f'executing: {cmd}')
+        
         os.system(cmd)
+        
+        if not os.path.isfile(outfile_path):
+            print()
+            print('---------------------------------------------------------------------------')
+            print('ATENTION! FFmpeg-based audio file decoding process failed')
+            print("If you don't have FFmpeg installed, download it from https://www.ffmpeg.org")
+            print("Also, remember to add it to the Path environment variable")
+            print("so it can be called from the console. Without FFmpeg you can")
+            print("only use WAVE files.")
+            print("The script will be now terminated.")
+            print('---------------------------------------------------------------------------')
+            print()
+            exit()
+            
         
         wav_read_fpath = outfile_path
     
@@ -595,15 +610,15 @@ def cmd_show_oversampled_spectrograms(settings):
     
     plt.imshow(sspect, aspect='auto', origin='lower', extent=[t_start,t_stop,0,fs//2], cmap='RdYlGn')
     cbar = plt.colorbar()
-    cbar.set_label('spectral component power [-]')
     plt.title(f"{fname} ({t_start} s - {t_stop} s)")
     plt.xlabel('time [s]')
     plt.ylabel('frequency [Hz]')
     
     if   scale_type=='logarithmic':
         plt.gca().set_yscale('symlog')
+        cbar.set_label('spectral component power [dB]')
     elif scale_type=='linear':
-        pass # no action necessary
+        cbar.set_label('spectral component power [-]')
     else:
         raise RuntimeError('Bad scale type was specified.')
     

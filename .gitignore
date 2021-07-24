@@ -1,3 +1,6 @@
+# My non-shared, local-only files:
+todo.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
