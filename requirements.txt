@@ -1,0 +1,8 @@
+numpy==1.18.1
+matplotlib==3.0.3
+tqdm==4.36.1
+pandas==1.1.5
+librosa==0.8.0
+numba==0.52.0
+scipy==1.5.4
+scikit_learn==0.24.2

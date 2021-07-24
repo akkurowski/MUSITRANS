@@ -21,7 +21,6 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm
 import librosa
 import pandas as pd
-import seaborn as sns
 
 if os.name == 'nt':
     os.system('cls')

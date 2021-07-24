@@ -11,7 +11,7 @@
 
 To run the algorithm, just put your audio files in the *_data/input_signals* The following extensions are allowed: *.wav*, *.mp3*, and *.m4a*, however other formats can be specified in the *settings.ini* file. Next just run the *musitrans.py* and choose adequate options from the CLI.
 
-Keep in mind, that for processing input files other than WAVE files you have to install <a href="ffmpeg.org">FFmpeg</a> and add it to the *Path* system environment variable, so it can be called from the console by the MUSITRANS script.
+Keep in mind, that for processing input files other than WAVE files you have to install <a href="https://www.ffmpeg.org">FFmpeg</a> and add it to the *Path* system environment variable, so it can be called from the console by the MUSITRANS script.
 
 <p align="center">*****</p>
 

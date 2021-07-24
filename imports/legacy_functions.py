@@ -20,7 +20,6 @@ from collections import Counter
 import librosa
 import pandas as pd
 from sklearn.cluster import DBSCAN, AgglomerativeClustering
-import seaborn as sns
 import copy as cp
 from imports.util_communication import *
 from scipy.signal.windows import kaiser, hamming, hann, blackman
