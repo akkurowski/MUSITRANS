@@ -623,6 +623,8 @@ def cmd_generate_prechromograms(settings):
         print('No files for processing were found.')
         
     for fname in os.listdir(DATA_DIR):
+        _,ext = os.path.splitext(fname)
+        if ext not in settings['PROCESSING_PRESETS']['allowed_input_ext']: continue
         print(f'reading file: {fname}')
         fs,orig_audio_data = read_file(TMP_DIR, os.path.join(DATA_DIR,fname))
         audio_signal       = stereo2mono(orig_audio_data).astype(np.float32)
