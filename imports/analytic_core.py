@@ -740,6 +740,10 @@ def cmd_detect_f0(settings):
     
     for fname in os.listdir(prechromograms_data_dir):
         INFILE = os.path.join(prechromograms_data_dir,fname)
+        _, ext = os.path.splitext(fname)
+        
+        if ext not in ['.npz']:
+            continue
         
         print(f'processing path: {fname}')
         print()
@@ -798,6 +802,10 @@ def synthesize_tracking_results(settings):
     musical_freqs = get_musical_frequencies()
     
     for fname in os.listdir(settings['DIRECTORIES']['melody_tracking_dir']):
+        _, ext = os.path.splitext(fname)
+        
+        if ext not in ['.npz']:
+            continue
         
         melody_tracking_dir    = os.path.join(settings['DIRECTORIES']['melody_tracking_dir'], fname)
         tracking_data          = np.load(melody_tracking_dir, allow_pickle=True)
