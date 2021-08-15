@@ -1,4 +1,4 @@
-<p style="font-size:large;font-color:darkred">This is a developer branch of the project - it is recomended to use a stable version from the `main` branch</p>
+<span style="font-size:14pt;color:##820000;">*This is a developer branch of the project - it is recomended to use a stable version from the `main` branch*</span>
 <br/>
 
 <p align="center"><img src="https://github.com/akkurowski/MUSITRANS/blob/main/img/musitrans_logo.png?raw=true" alt="logo" width="1000"/></p>
