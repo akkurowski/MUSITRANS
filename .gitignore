@@ -1,3 +1,9 @@
+# Testing data - for development an extended set is used
+*.wav
+*.mp3
+*.m4a
+*.npz
+
 # My non-shared, local-only files:
 todo.txt
 
